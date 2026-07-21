@@ -1,7 +1,14 @@
 # GitHub Pages 배포 절차
 
 대상 저장소: `evans-kim/codex`  
-예정 주소: `https://evans-kim.github.io/codex/`
+배포 주소: `https://evans-kim.github.io/codex/`
+
+## 현재 배포 상태
+
+- GitHub Pages API: HTTP 200
+- 공개 앱: HTTP 200
+- 핵심 자산: JavaScript, 대표 메뉴 SVG, Manifest 로드 성공
+- 자동 검증 결과: [`DEPLOYMENT_STATUS.json`](./DEPLOYMENT_STATUS.json)
 
 ## 배포 구조
 
@@ -37,6 +44,8 @@ GitHub Pages는 특정 브랜치의 루트를 게시 소스로 사용할 수 있
 4. GitHub Pages REST API로 `gh-pages` `/`를 게시 소스로 생성 또는 갱신
 5. Pages 상태가 `built`인지 확인
 6. 실제 URL에서 `index.html`, `js/app.js`, 대표 메뉴 SVG, Manifest 확인
+
+GitHub Actions의 `verify-pages.yml`도 `main` 변경 시 테스트·빌드·실 URL 확인을 수행하고 결과를 `DEPLOYMENT_STATUS.json`에 저장한다.
 
 ## 수동 확인
 
