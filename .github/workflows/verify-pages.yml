@@ -1,0 +1,145 @@
+name: Verify GitHub Pages deployment
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - DEPLOYMENT_STATUS.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: verify-pages
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run automated tests
+        run: npm test
+
+      - name: Build static Pages artifact
+        run: npm run build
+
+      - name: Detect or enable branch-based Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        shell: bash
+        run: |
+          set +e
+          api_url="https://api.github.com/repos/${REPOSITORY}/pages"
+          pages_http="$(curl --silent --show-error --location \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            --output pages-response.json --write-out '%{http_code}' \
+            "${api_url}")"
+          create_http="not-needed"
+
+          if [[ "${pages_http}" == "404" ]]; then
+            create_http="$(curl --silent --show-error --location \
+              --request POST \
+              --header 'Accept: application/vnd.github+json' \
+              --header "Authorization: Bearer ${GH_TOKEN}" \
+              --header 'X-GitHub-Api-Version: 2022-11-28' \
+              --header 'Content-Type: application/json' \
+              --data '{"build_type":"legacy","source":{"branch":"gh-pages","path":"/"}}' \
+              --output pages-create-response.json --write-out '%{http_code}' \
+              "${api_url}")"
+
+            pages_http="$(curl --silent --show-error --location \
+              --header 'Accept: application/vnd.github+json' \
+              --header "Authorization: Bearer ${GH_TOKEN}" \
+              --header 'X-GitHub-Api-Version: 2022-11-28' \
+              --output pages-response.json --write-out '%{http_code}' \
+              "${api_url}")"
+          fi
+
+          echo "PAGES_API_HTTP=${pages_http}" >> "${GITHUB_ENV}"
+          echo "PAGES_CREATE_HTTP=${create_http}" >> "${GITHUB_ENV}"
+          if [[ "${pages_http}" == "200" ]]; then
+            echo 'PAGES_ENABLED=true' >> "${GITHUB_ENV}"
+          else
+            echo 'PAGES_ENABLED=false' >> "${GITHUB_ENV}"
+          fi
+
+      - name: Verify the live site and core assets
+        env:
+          SITE_URL: https://evans-kim.github.io/codex/
+        shell: bash
+        run: |
+          set +e
+          site_http="000"
+          site_live="false"
+          asset_checks="false"
+
+          for attempt in $(seq 1 36); do
+            site_http="$(curl --silent --show-error --location \
+              --output deployed-index.html --write-out '%{http_code}' \
+              "${SITE_URL}")"
+            if [[ "${site_http}" == "200" ]] && grep -q '<title>여보, 오늘 뭐 먹지?</title>' deployed-index.html; then
+              site_live="true"
+              break
+            fi
+            sleep 5
+          done
+
+          if [[ "${site_live}" == "true" ]]; then
+            if curl --fail --silent --show-error --location "${SITE_URL}js/app.js" >/dev/null \
+              && curl --fail --silent --show-error --location "${SITE_URL}assets/menus/shabu-shabu.svg" >/dev/null \
+              && curl --fail --silent --show-error --location "${SITE_URL}manifest.webmanifest" >/dev/null; then
+              asset_checks="true"
+            fi
+          fi
+
+          echo "SITE_HTTP=${site_http}" >> "${GITHUB_ENV}"
+          echo "SITE_LIVE=${site_live}" >> "${GITHUB_ENV}"
+          echo "ASSET_CHECKS=${asset_checks}" >> "${GITHUB_ENV}"
+
+      - name: Record deployment verification
+        if: always()
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const status = {
+            checked_at: new Date().toISOString(),
+            source_commit: process.env.GITHUB_SHA,
+            workflow_run: process.env.GITHUB_RUN_ID,
+            pages_api_http: process.env.PAGES_API_HTTP ?? 'not-run',
+            pages_create_http: process.env.PAGES_CREATE_HTTP ?? 'not-run',
+            pages_enabled: process.env.PAGES_ENABLED === 'true',
+            site_url: 'https://evans-kim.github.io/codex/',
+            site_http: process.env.SITE_HTTP ?? 'not-run',
+            site_live: process.env.SITE_LIVE === 'true',
+            core_assets_ok: process.env.ASSET_CHECKS === 'true'
+          };
+          fs.writeFileSync('DEPLOYMENT_STATUS.json', `${JSON.stringify(status, null, 2)}\n`);
+          NODE
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add DEPLOYMENT_STATUS.json
+          git commit -m 'chore: record Pages deployment status [skip ci]' || true
+          git push origin HEAD:main
+
+      - name: Require a verified deployment
+        if: always()
+        shell: bash
+        run: |
+          [[ "${SITE_LIVE:-false}" == "true" ]]
+          [[ "${ASSET_CHECKS:-false}" == "true" ]]
