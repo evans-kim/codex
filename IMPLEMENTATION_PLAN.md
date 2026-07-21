@@ -2,7 +2,7 @@
 
 작성일: 2026-07-21  
 대상 저장소: `evans-kim/codex`  
-배포 예정 URL: `https://evans-kim.github.io/codex/`
+배포 URL: `https://evans-kim.github.io/codex/`
 
 ## 1. 목표와 범위
 
@@ -20,7 +20,7 @@
 | **3. 브라우저 개인화** | localStorage, 최근 메뉴 감점, 좋아요·별로예요, 기록, 백업·복원 | 새로고침 후 데이터 유지, 내보내기·가져오기·초기화 가능 | ✅ 완료 |
 | **4. PWA·접근성** | Manifest, Service Worker, 앱 아이콘, 오프라인 캐시, 키보드·반응형 UI | HTTPS에서 설치 가능하고 앱 셸과 메뉴 이미지가 캐시됨 | ✅ 완료 |
 | **5. 검증** | 추천·저장소 단위 테스트, 정적 무결성 검사, 브라우저 스모크 테스트 | 자동 테스트 및 모바일·데스크톱 핵심 흐름 통과 | ✅ 완료 |
-| **6. 공개 배포** | 공개 저장소, `main`, `gh-pages`, Pages 소스 설정, 배포 URL 검증 | 공개 URL에서 앱과 핵심 자산을 확인 | ⏳ 원격 쓰기 권한 연결 후 실행 |
+| **6. 공개 배포** | 공개 저장소, `main`, `gh-pages`, Pages 소스 설정, 배포 URL 검증 | 공개 URL에서 앱과 핵심 자산을 확인 | ✅ 완료 |
 
 ## 3. 페이즈별 상세 작업
 
@@ -84,6 +84,7 @@
 - `.nojekyll`로 Jekyll 처리 우회
 - 배포 완료 상태를 확인한 뒤 실제 URL에서 HTML, JavaScript, 메뉴 이미지와 Manifest를 재검증
 - 배포 산출물 구성을 `scripts/build-pages.mjs`로 결정론적으로 만들고 전체 절차를 `scripts/publish-pages.sh`로 자동화
+- GitHub Actions가 실제 배포 URL을 재검증하고 결과를 `DEPLOYMENT_STATUS.json`에 기록
 
 ## 4. 완료 기준 추적
 
@@ -96,7 +97,7 @@
 - [x] 반응형·키보드·축소 모션 대응
 - [x] PWA 앱 셸과 메뉴 이미지 오프라인 캐시
 - [x] 자동 테스트와 브라우저 스모크 테스트 통과
-- [ ] 공개 저장소 및 GitHub Pages 배포 확인
+- [x] 공개 저장소 및 GitHub Pages 배포 확인
 
 ## 5. 후속 개선 후보
 
