@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">수제버거 일러스트</title><desc id="desc">수제버거를 따뜻한 플랫 일러스트로 표현한 이미지</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#75a65f"/><stop offset="1" stop-color="#e0a64d"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#4f3527" flood-opacity=".18"/></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="26"/></filter>
+</defs>
+<rect width="800" height="600" rx="48" fill="url(#bg)"/>
+<circle cx="120" cy="100" r="92" fill="#fff" opacity=".18"/>
+<circle cx="700" cy="500" r="150" fill="#fff" opacity=".12"/>
+<path d="M70 476C170 414 258 447 353 430c122-22 218-101 377-42v212H70z" fill="#fff" opacity=".13"/>
+<ellipse cx="400" cy="470" rx="210" ry="65" fill="#4f3327" opacity=".2" filter="url(#soft)"/><g filter="url(#shadow)"><path d="M230 330c14-98 326-107 340 0z" fill="#e5a84f"/><rect x="220" y="330" width="360" height="58" rx="28" fill="#7d4933"/><path d="M235 378h330l-20 55H255z" fill="#f0c351"/><path d="M250 410c55-45 104 25 152-3s94-11 148 11l-12 48H262z" fill="#75a25f"/><path d="M238 444h324c18 0 31 17 23 34-25 53-341 54-370 0-9-17 4-34 23-34z" fill="#d99543"/></g><g fill="#f6e8bd"><circle cx="320" cy="281" r="7"/><circle cx="390" cy="265" r="7"/><circle cx="465" cy="283" r="7"/></g></svg>

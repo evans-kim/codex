@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">연어덮밥 일러스트</title><desc id="desc">연어덮밥를 따뜻한 플랫 일러스트로 표현한 이미지</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7e5b2"/><stop offset="1" stop-color="#ef8f73"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#4f3527" flood-opacity=".18"/></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="26"/></filter>
+</defs>
+<rect width="800" height="600" rx="48" fill="url(#bg)"/>
+<circle cx="120" cy="100" r="92" fill="#fff" opacity=".18"/>
+<circle cx="700" cy="500" r="150" fill="#fff" opacity=".12"/>
+<path d="M70 476C170 414 258 447 353 430c122-22 218-101 377-42v212H70z" fill="#fff" opacity=".13"/>
+<ellipse cx="400" cy="430" rx="250" ry="92" fill="#5b3a2c" opacity=".18" filter="url(#soft)"/>
+<path d="M185 332h430c-18 168-92 216-215 216S203 500 185 332z" fill="#f4e8d7" filter="url(#shadow)"/>
+<ellipse cx="400" cy="332" rx="218" ry="88" fill="#557781"/>
+<ellipse cx="400" cy="326" rx="196" ry="70" fill="#fff1d7"/><path d="M260 321c24-85 255-99 284-7-61 48-220 56-284 7z" fill="#fff8e7"/><path d="M285 278c24-23 86-16 94 13 7 26-34 41-63 34-30-7-48-27-31-47z" fill="#ef8d74" transform="rotate(-8 330 298)"/><path d="M375 262c24-23 86-16 94 13 7 26-34 41-63 34-30-7-48-27-31-47z" fill="#ef8d74" transform="rotate(10 420 282)"/><path d="M455 292c24-23 86-16 94 13 7 26-34 41-63 34-30-7-48-27-31-47z" fill="#ef8d74" transform="rotate(-12 500 312)"/><circle cx="352" cy="330" r="13" fill="#6e9c70"/><circle cx="445" cy="326" r="12" fill="#f2c84c"/></svg>

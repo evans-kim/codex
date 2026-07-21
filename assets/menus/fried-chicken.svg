@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">치킨 일러스트</title><desc id="desc">치킨를 따뜻한 플랫 일러스트로 표현한 이미지</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4ce76"/><stop offset="1" stop-color="#d89a3b"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#4f3527" flood-opacity=".18"/></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="26"/></filter>
+</defs>
+<rect width="800" height="600" rx="48" fill="url(#bg)"/>
+<circle cx="120" cy="100" r="92" fill="#fff" opacity=".18"/>
+<circle cx="700" cy="500" r="150" fill="#fff" opacity=".12"/>
+<path d="M70 476C170 414 258 447 353 430c122-22 218-101 377-42v212H70z" fill="#fff" opacity=".13"/>
+<ellipse cx="400" cy="420" rx="270" ry="112" fill="#6e4b39" opacity=".18" filter="url(#soft)"/>
+<ellipse cx="400" cy="390" rx="260" ry="126" fill="#fff" filter="url(#shadow)"/>
+<ellipse cx="400" cy="390" rx="220" ry="94" fill="#f6ead1"/><g transform="translate(250 318) rotate(-17)"><path d="M0 22c10-38 70-43 92-10 25 38-7 82-49 80C8 90-13 57 0 22z" fill="#cf8e3d" stroke="#8a572d" stroke-width="6"/><rect x="70" y="38" width="65" height="18" rx="9" fill="#f3e1bc"/><circle cx="132" cy="47" r="13" fill="#f3e1bc"/></g><g transform="translate(370 292) rotate(12)"><path d="M0 22c10-38 70-43 92-10 25 38-7 82-49 80C8 90-13 57 0 22z" fill="#cf8e3d" stroke="#8a572d" stroke-width="6"/><rect x="70" y="38" width="65" height="18" rx="9" fill="#f3e1bc"/><circle cx="132" cy="47" r="13" fill="#f3e1bc"/></g><g transform="translate(420 380) rotate(-5)"><path d="M0 22c10-38 70-43 92-10 25 38-7 82-49 80C8 90-13 57 0 22z" fill="#cf8e3d" stroke="#8a572d" stroke-width="6"/><rect x="70" y="38" width="65" height="18" rx="9" fill="#f3e1bc"/><circle cx="132" cy="47" r="13" fill="#f3e1bc"/></g><circle cx="320" cy="420" r="18" fill="#72996a"/><circle cx="515" cy="325" r="19" fill="#efc658"/></svg>

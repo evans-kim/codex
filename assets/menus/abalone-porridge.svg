@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">전복죽 일러스트</title><desc id="desc">전복죽를 따뜻한 플랫 일러스트로 표현한 이미지</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8de"/><stop offset="1" stop-color="#e7d3a7"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#4f3527" flood-opacity=".18"/></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="26"/></filter>
+</defs>
+<rect width="800" height="600" rx="48" fill="url(#bg)"/>
+<circle cx="120" cy="100" r="92" fill="#fff" opacity=".18"/>
+<circle cx="700" cy="500" r="150" fill="#fff" opacity=".12"/>
+<path d="M70 476C170 414 258 447 353 430c122-22 218-101 377-42v212H70z" fill="#fff" opacity=".13"/>
+<ellipse cx="400" cy="430" rx="250" ry="92" fill="#5b3a2c" opacity=".18" filter="url(#soft)"/>
+<path d="M185 332h430c-18 168-92 216-215 216S203 500 185 332z" fill="#f2e7d2" filter="url(#shadow)"/>
+<ellipse cx="400" cy="332" rx="218" ry="88" fill="#8b725d"/>
+<ellipse cx="400" cy="326" rx="196" ry="70" fill="#f4e6b9"/><circle cx="318" cy="322" r="21" fill="#617e6f"/><circle cx="372" cy="345" r="16" fill="#d6b36b"/><circle cx="430" cy="315" r="23" fill="#fff4d5"/><circle cx="480" cy="340" r="18" fill="#617e6f"/><ellipse cx="430" cy="296" rx="36" ry="19" fill="#80705e" transform="rotate(-15 430 296)"/><g fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".72">
+<path d="M320 210c-28-34 28-54 0-90"/><path d="M390 216c-28-34 28-54 0-90"/><path d="M460 210c-28-34 28-54 0-90"/></g></svg>

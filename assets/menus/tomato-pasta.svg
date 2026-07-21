@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">토마토 파스타 일러스트</title><desc id="desc">토마토 파스타를 따뜻한 플랫 일러스트로 표현한 이미지</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3be64"/><stop offset="1" stop-color="#d95545"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#4f3527" flood-opacity=".18"/></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="26"/></filter>
+</defs>
+<rect width="800" height="600" rx="48" fill="url(#bg)"/>
+<circle cx="120" cy="100" r="92" fill="#fff" opacity=".18"/>
+<circle cx="700" cy="500" r="150" fill="#fff" opacity=".12"/>
+<path d="M70 476C170 414 258 447 353 430c122-22 218-101 377-42v212H70z" fill="#fff" opacity=".13"/>
+<ellipse cx="400" cy="420" rx="270" ry="112" fill="#6e4b39" opacity=".18" filter="url(#soft)"/>
+<ellipse cx="400" cy="390" rx="260" ry="126" fill="#fff" filter="url(#shadow)"/>
+<ellipse cx="400" cy="390" rx="220" ry="94" fill="#fff1cd"/><g fill="none" stroke="#e3b84d" stroke-width="16" stroke-linecap="round"><path d="M275 373c28-90 205-102 254 0-80 75-205 69-254 0z"/><path d="M310 344c55 48 126 49 180 0M315 395c58-43 121-45 175 0M355 310c-10 67-10 120 2 165M425 304c18 64 15 125-4 170"/></g><circle cx="332" cy="348" r="20" fill="#ce4f3e"/><circle cx="468" cy="367" r="19" fill="#739b68"/><circle cx="400" cy="410" r="17" fill="#f2d569"/><circle cx="438" cy="328" r="14" fill="#ce4f3e"/></svg>

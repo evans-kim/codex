@@ -1,0 +1,49 @@
+{
+  "name": "여보, 오늘 뭐 먹지?",
+  "short_name": "오늘 저녁",
+  "description": "오늘의 기분과 몸 상태에 맞는 저녁 메뉴를 브라우저 안에서만 추천해요.",
+  "lang": "ko-KR",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff7ed",
+  "theme_color": "#fff7ed",
+  "categories": ["food", "lifestyle"],
+  "icons": [
+    {
+      "src": "./assets/icons/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/app-icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "바로 추천받기",
+      "short_name": "바로 추천",
+      "description": "질문 없이 안전 메뉴를 바로 추천받아요.",
+      "url": "./?quick=1",
+      "icons": [
+        {
+          "src": "./assets/icons/app-icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

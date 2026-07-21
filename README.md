@@ -2,7 +2,8 @@
 
 오늘의 기분과 몸 상태에 어울리는 저녁 메뉴를 이미지와 함께 추천하는 브라우저 전용 웹앱입니다.
 
-**배포 앱:** <https://evans-kim.github.io/codex/>
+**배포 예정 주소:** <https://evans-kim.github.io/codex/>  
+현재 상태: 로컬 구현·검증 완료, 원격 게시 대기
 
 ## 주요 기능
 
@@ -32,26 +33,40 @@ python3 -m http.server 4173
 
 브라우저에서 `http://localhost:4173`으로 접속합니다. `file://`로 직접 열면 ES Modules와 Service Worker가 브라우저 보안 정책에 의해 제한될 수 있습니다.
 
+## 정적 배포 산출물
+
+GitHub Pages에 올릴 런타임 파일만 `dist/`에 준비합니다.
+
+```bash
+npm run build
+```
+
+`dist/`는 재생성 가능한 산출물이므로 Git에는 포함하지 않습니다.
+
 ## 테스트
 
 Node.js 20 이상에서 외부 패키지 없이 실행됩니다.
 
 ```bash
 npm test
+npm run build
 ```
 
-테스트 범위는 추천 규칙, 최근 메뉴 감점, 저장 데이터 정제, 메뉴·아이콘 파일 경로, Service Worker 캐시, 외부 런타임 URL 부재를 포함합니다.
+테스트 범위는 추천 규칙, 최근 메뉴 감점, 저장 데이터 정제, 메뉴·아이콘 파일 경로, Service Worker 캐시, 외부 런타임 URL 부재를 포함합니다. `npm run build`는 실제 Pages에 필요한 파일만 `dist/`에 재현 가능하게 구성합니다.
 
 ## 구조
 
 ```text
 .
 ├── index.html
-├── styles.css
+├── styles/
 ├── manifest.webmanifest
 ├── sw.js
 ├── js/
 │   ├── app.js
+│   ├── app-context.js
+│   ├── app-view.js
+│   ├── app-actions.js
 │   ├── menus.js
 │   ├── recommendation.js
 │   └── storage.js
@@ -59,6 +74,10 @@ npm test
 │   ├── icons/
 │   └── menus/
 ├── tests/
+├── scripts/
+│   ├── build-pages.mjs
+│   └── publish-pages.sh
+├── DEPLOYMENT.md
 ├── IMPLEMENTATION_PLAN.md
 └── README.md
 ```
@@ -76,7 +95,7 @@ npm test
 
 ## 배포
 
-`main` 브랜치가 소스 브랜치이며, 검증된 동일 커밋을 `gh-pages` 브랜치에도 게시합니다. GitHub Pages는 `gh-pages` 브랜치의 루트 정적 파일을 서비스합니다. 배포 전에는 `npm test`와 브라우저 스모크 테스트를 실행합니다.
+`main` 브랜치가 소스 브랜치이며, `npm run build`로 만든 정적 `dist/` 산출물만 `gh-pages` 브랜치에 직접 게시합니다. `scripts/publish-pages.sh`는 테스트, `main` 푸시, 산출물 게시, Pages 소스 설정, 실제 배포 URL의 HTML·JavaScript·메뉴 이미지·Manifest 확인을 순서대로 수행합니다. 상세 절차는 [DEPLOYMENT.md](./DEPLOYMENT.md)에 정리했습니다.
 
 ## 구현 기록
 

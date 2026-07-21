@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">스테이크 일러스트</title><desc id="desc">스테이크를 따뜻한 플랫 일러스트로 표현한 이미지</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#98aa72"/><stop offset="1" stop-color="#9e5541"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#4f3527" flood-opacity=".18"/></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="26"/></filter>
+</defs>
+<rect width="800" height="600" rx="48" fill="url(#bg)"/>
+<circle cx="120" cy="100" r="92" fill="#fff" opacity=".18"/>
+<circle cx="700" cy="500" r="150" fill="#fff" opacity=".12"/>
+<path d="M70 476C170 414 258 447 353 430c122-22 218-101 377-42v212H70z" fill="#fff" opacity=".13"/>
+<ellipse cx="400" cy="420" rx="270" ry="112" fill="#6e4b39" opacity=".18" filter="url(#soft)"/>
+<ellipse cx="400" cy="390" rx="260" ry="126" fill="#fff" filter="url(#shadow)"/>
+<ellipse cx="400" cy="390" rx="220" ry="94" fill="#f3eadb"/><path d="M275 350c20-72 162-95 239-39 70 51 21 124-76 136-110 14-189-26-163-97z" fill="#9d543f" stroke="#693b31" stroke-width="8"/><g stroke="#d58a67" stroke-width="8" opacity=".7"><path d="M315 337l145 77M345 310l153 78M293 380l115 60"/></g><circle cx="530" cy="360" r="25" fill="#749a68"/><circle cx="520" cy="412" r="18" fill="#e2bd5d"/><circle cx="270" cy="418" r="20" fill="#cc6b50"/></svg>

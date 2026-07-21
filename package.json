@@ -1,0 +1,16 @@
+{
+  "name": "yeobo-dinner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "브라우저 안에서만 작동하는 오늘의 기분 기반 저녁 메뉴 추천 웹앱",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/build-pages.mjs",
+    "serve": "python3 -m http.server 4173"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">삼계탕 일러스트</title><desc id="desc">삼계탕를 따뜻한 플랫 일러스트로 표현한 이미지</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7ead0"/><stop offset="1" stop-color="#e7c58e"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#4f3527" flood-opacity=".18"/></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="26"/></filter>
+</defs>
+<rect width="800" height="600" rx="48" fill="url(#bg)"/>
+<circle cx="120" cy="100" r="92" fill="#fff" opacity=".18"/>
+<circle cx="700" cy="500" r="150" fill="#fff" opacity=".12"/>
+<path d="M70 476C170 414 258 447 353 430c122-22 218-101 377-42v212H70z" fill="#fff" opacity=".13"/>
+<ellipse cx="400" cy="451" rx="248" ry="86" fill="#432d23" opacity=".18" filter="url(#soft)"/>
+<path d="M190 278h420l-34 218H224z" fill="#a77f54" filter="url(#shadow)"/>
+<rect x="135" y="315" width="90" height="34" rx="17" fill="#a77f54"/><rect x="575" y="315" width="90" height="34" rx="17" fill="#a77f54"/>
+<ellipse cx="400" cy="281" rx="210" ry="82" fill="#292827"/>
+<ellipse cx="400" cy="276" rx="190" ry="66" fill="#ead19f"/><ellipse cx="405" cy="295" rx="98" ry="48" fill="#f4dfb3" transform="rotate(-5 405 295)"/><circle cx="340" cy="278" r="28" fill="#f4dfb3"/><circle cx="468" cy="304" r="26" fill="#f4dfb3"/><circle cx="298" cy="304" r="17" fill="#72956e"/><circle cx="514" cy="276" r="18" fill="#d3a74f"/><circle cx="425" cy="252" r="13" fill="#72956e"/><g fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".72">
+<path d="M320 185c-28-34 28-54 0-90"/><path d="M390 191c-28-34 28-54 0-90"/><path d="M460 185c-28-34 28-54 0-90"/></g></svg>

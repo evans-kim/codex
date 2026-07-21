@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">치킨 샐러드 일러스트</title><desc id="desc">치킨 샐러드를 따뜻한 플랫 일러스트로 표현한 이미지</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2d770"/><stop offset="1" stop-color="#7eaa6d"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#4f3527" flood-opacity=".18"/></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="26"/></filter>
+</defs>
+<rect width="800" height="600" rx="48" fill="url(#bg)"/>
+<circle cx="120" cy="100" r="92" fill="#fff" opacity=".18"/>
+<circle cx="700" cy="500" r="150" fill="#fff" opacity=".12"/>
+<path d="M70 476C170 414 258 447 353 430c122-22 218-101 377-42v212H70z" fill="#fff" opacity=".13"/>
+<ellipse cx="400" cy="430" rx="250" ry="92" fill="#5b3a2c" opacity=".18" filter="url(#soft)"/>
+<path d="M185 332h430c-18 168-92 216-215 216S203 500 185 332z" fill="#eff4ea" filter="url(#shadow)"/>
+<ellipse cx="400" cy="332" rx="218" ry="88" fill="#66886d"/>
+<ellipse cx="400" cy="326" rx="196" ry="70" fill="#d9edcf"/><g fill="#78a86c"><ellipse cx="310" cy="310" rx="54" ry="28" transform="rotate(-22 310 310)"/><ellipse cx="385" cy="286" rx="56" ry="30" transform="rotate(18 385 286)"/><ellipse cx="470" cy="316" rx="54" ry="28" transform="rotate(-15 470 316)"/></g><circle cx="330" cy="340" r="20" fill="#e4c64e"/><circle cx="410" cy="334" r="18" fill="#d8775a"/><circle cx="492" cy="350" r="19" fill="#f1e8cc"/><circle cx="375" cy="300" r="15" fill="#b48662"/><path d="M300 350c25-45 90-40 104 8-39 29-72 27-104-8z" fill="#d39c6b"/></svg>
