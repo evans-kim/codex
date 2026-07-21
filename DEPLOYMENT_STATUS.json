@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-07-21T11:34:23.607Z",
+  "source_commit": "e3053839a6bb120c0cc0c3b608947458603476d8",
+  "workflow_run": "29826623695",
+  "pages_api_http": "200",
+  "pages_create_http": "not-needed",
+  "pages_enabled": true,
+  "site_url": "https://evans-kim.github.io/codex/",
+  "site_http": "200",
+  "site_live": true,
+  "core_assets_ok": true
+}
