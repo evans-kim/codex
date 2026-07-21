@@ -2,8 +2,8 @@
 
 오늘의 기분과 몸 상태에 어울리는 저녁 메뉴를 이미지와 함께 추천하는 브라우저 전용 웹앱입니다.
 
-**배포 예정 주소:** <https://evans-kim.github.io/codex/>  
-현재 상태: 로컬 구현·검증 완료, 원격 게시 대기
+**배포 앱:** <https://evans-kim.github.io/codex/>  
+**배포 상태:** GitHub Pages와 핵심 정적 자산 검증 완료
 
 ## 주요 기능
 
@@ -53,6 +53,8 @@ npm run build
 ```
 
 테스트 범위는 추천 규칙, 최근 메뉴 감점, 저장 데이터 정제, 메뉴·아이콘 파일 경로, Service Worker 캐시, 외부 런타임 URL 부재를 포함합니다. `npm run build`는 실제 Pages에 필요한 파일만 `dist/`에 재현 가능하게 구성합니다.
+
+배포 뒤에는 GitHub Actions가 실제 Pages URL과 `js/app.js`, 대표 메뉴 SVG, Manifest를 다시 요청해 결과를 [`DEPLOYMENT_STATUS.json`](./DEPLOYMENT_STATUS.json)에 기록합니다.
 
 ## 구조
 
